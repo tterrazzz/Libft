@@ -6,7 +6,7 @@
 /*   By: avan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 13:32:02 by avan              #+#    #+#             */
-/*   Updated: 2022/11/17 14:01:50 by avan             ###   ########.fr       */
+/*   Updated: 2022/11/21 15:30:36 by avan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (*lst)
 	{
-		temp = *lst;
+		temp = (*lst)->next;
 		ft_lstdelone(*lst, del);
-		*lst = temp->next;
+		*lst = temp;
 	}
 	lst = NULL;
 }
