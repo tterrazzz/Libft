@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/* Dynamically allocates memory in the heap and sets the bytes value to 0
+ *
+ * @param count: number of elements
+ * @param size: size of the element
+ *
+ * @return a pointer to the allocated memory, it has to be freed by the user 
+ * after use; NULL if the count or size values are higher than SIZE_MAX
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*tab;

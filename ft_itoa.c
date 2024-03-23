@@ -24,6 +24,12 @@ static int	ft_countchar(int n, int count)
 	return (count);
 }
 
+/* Converts an int value to an array of char
+ *
+ * @param n: int value
+ *
+ * @return a dynamic allocated array of char
+ */
 char	*ft_itoa(int n)
 {
 	int		count;
@@ -49,15 +55,4 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-/*
-int main(void)
-{
-	int		n;
-	char	*str;
 
-	n = 214748364;
-	str = ft_itoa(n);
-	printf("%s\n", str);
-	free(str);
-	return (0);
-}*/

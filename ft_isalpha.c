@@ -12,7 +12,13 @@
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+/* Checks if the value if alphabetical
+ *
+ * @param c: value to check
+ *
+ * @return 1 if alphabetical, 0 if not
+ */
+bool	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);

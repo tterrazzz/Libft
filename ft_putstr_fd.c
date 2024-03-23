@@ -12,16 +12,18 @@
 
 #include "libft.h"
 
+/* Prints an array of char in a file descriptor
+ *
+ * @param s: array of char
+ * @param fd: file descriptor
+ */
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	if (!s)
-		i = 0;
-	else
-	{
-		i = 0;
-		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-	}
+    return ;
+	i = 0;
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
 }

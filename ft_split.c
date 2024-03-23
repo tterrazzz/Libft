@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/* c is the delimiter
+ */
 static void	ft_translation(char const *s, char c, int *i)
 {
 	int	j;
@@ -22,6 +24,8 @@ static void	ft_translation(char const *s, char c, int *i)
 	*i = *i + j - 1;
 }
 
+/* c is the delimiter
+ */
 static void	ft_translationdif(char const *s, char c, int *i, int nb)
 {
 	int	j;
@@ -33,7 +37,9 @@ static void	ft_translationdif(char const *s, char c, int *i, int nb)
 	*i = *i + j - 1;
 }
 
-static char	*ft_deploiementmot(char const *strpos, char c, int *i, char **stock)
+/* c is the delimiter
+ */
+static char	*ft_allocate_word(char const *strpos, char c, int *i, char **stock)
 {
 	int		j;
 	int		nb;
@@ -55,7 +61,16 @@ static char	*ft_deploiementmot(char const *strpos, char c, int *i, char **stock)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+/* Splits an array of char with a chosen delimiter into an array of words, 
+ * dynamically allocates memory in the heap, the array and its contents must be
+ * freed by the user after use
+ *
+ * @param s: array of char
+ * @param delimiter
+ * 
+ * @return a dynamically memory allocated array of words; NULL if s = NULL
+ */
+char	**ft_split(char const *s, char delimiter)
 {
 	int			i;
 	int			nb;
@@ -67,10 +82,10 @@ char	**ft_split(char const *s, char c)
 	nb = 0;
 	while (s[++i])
 	{
-		if (s[i] == c)
-			ft_translation(&s[i], c, &i);
-		else if (s[i] != c)
-			ft_translationdif(&s[i], c, &i, nb++);
+		if (s[i] == delimiter)
+			ft_translation(&s[i], delimiter, &i);
+		else if (s[i] != delimiter)
+			ft_translationdif(&s[i], delimiter, &i, nb++);
 	}
 	stock = (char **) malloc(sizeof(char *) * (nb + 1));
 	if (stock == NULL)
@@ -78,8 +93,8 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	nb = 0;
 	while (s[++i])
-		if (s[i] != c)
-			stock[nb++] = ft_deploiementmot(&s[i], c, &i, stock);
+		if (s[i] != delimiter)
+			stock[nb++] = ft_allocate_word(&s[i], delimiter, &i, stock);
 	stock[nb] = NULL;
 	return (stock);
 }

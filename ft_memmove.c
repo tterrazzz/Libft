@@ -12,14 +12,24 @@
 
 #include "libft.h"
 
+/* Copies bytes from a length of a memory area to another, if the destination 
+ * pointer is at a higher memory address than the source, it ensures that the 
+ * bytes are well copied
+ *
+ * @param dst: destination memory area
+ * @param src: source memory area
+ * @param len: length
+ *
+ * @return the destination memory area; NULL if either dst or src = NULL
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*ptrdst;
 	const char	*ptrsrc;
 	size_t		i;
 
-	if (!dst && !src)
-		return (0);
+  if (!dst || !src)
+    return (NULL);
 	ptrdst = dst;
 	ptrsrc = src;
 	i = 0;

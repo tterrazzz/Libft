@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/* Adds a node at the beginning of a linked list
+ *
+ * @param lst: pointer to the linked list's first node address
+ * @param new: pointer to the node to add
+ */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
@@ -19,17 +24,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-/*
-   int	main(void)
-   {
-   t_list	*lst;
-   t_list	*new;
-
-   lst = ft_lstnew(ft_strdup("NYANCAT"));
-   new = ft_lstnew(ft_strdup("OK"));
-
-   printf("adresse de lst : %p\n", lst);
-   printf("adresse de new : %p\n", new);
-   printf("adresse de new->next : %p\n", lst);
-   return (0);
-   }*/

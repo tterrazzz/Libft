@@ -12,13 +12,23 @@
 
 #include "libft.h"
 
+/* Returns a dynamically memory allocated array of char, it has to be freed by 
+ * the user after use
+ *
+ * @param s: array of char to copy
+ * @param start: starting index to begin copy
+ * @param len: length to copy from the starting index
+ *
+ * @return a dynamically memory allocated array of char; same, size 1 if start 
+ * is bigger than len; NULL if s = NULL
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	l;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	l = ft_strlen(s);
 	if (start >= l)
 		return (ft_strdup(""));
@@ -31,13 +41,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	l = ft_strlcpy(str, &s[start], l);
 	return (str);
 }
-
-/*int	main(void)
-  {
-  char	*s = "tripouille";
-  char	*smalloc;
-
-  smalloc = ft_substr(s, 1, 1);
-  printf("smalloc = %s\n", smalloc);
-  return (0);
-  }*/

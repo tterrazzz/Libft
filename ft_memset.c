@@ -12,11 +12,21 @@
 
 #include "libft.h"
 
+/* Sets all bytes within a chosen length of a memory area
+ *
+ * @param b: pointer to the memory area
+ * @param c: value to use to set
+ * @param len: length
+ *
+ * @return the pointer to the memory area; NULL if b = NULL
+ */
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 	char	*str;
 
+  if (!b)
+    return (NULL);
 	str = b;
 	i = 0;
 	while (i < len)

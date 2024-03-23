@@ -12,7 +12,13 @@
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+/* Checks if the value is numerical
+ *
+ * @param c: value to check
+ *
+ * @return 1 if digit, 0 if not
+ */
+bool	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

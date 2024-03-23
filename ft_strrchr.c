@@ -12,24 +12,30 @@
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+/* Searches an int value inside an array of char
+ *
+ * @param haystack: array of char to search in
+ * @param needle: int value
+ *
+ * @return the address of the found value inside the array of char; the address 
+ * to the '\0' of the array of char if needle = 0; NULL if haystack = NULL
+ */
+char	*ft_strrchr(const char *haystack, int needle)
 {
 	char	a;
 	int		i;
-	int		so;
 
+  if (!haystack)
+    return (NULL);
 	i = 0;
-	a = (char) c;
-	so = -1;
-	if (!a)
-		return ((char *)&s[ft_strlen(s)]);
+	a = (char) needle;
+	if (a == 0)
+		return (&s[ft_strlen(s)]);
 	while (s[i])
 	{
 		if (s[i] == a)
-			so = i;
+      return (&s[i]);
 		i++;
 	}
-	if (so == -1)
-		return (NULL);
-	return ((char *)&s[so]);
+	return (NULL);
 }

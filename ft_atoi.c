@@ -12,12 +12,23 @@
 
 #include "libft.h"
 
+/* Converts an array of char to an int value, ignores all whitespaces at the 
+ * front of the array, and takes into account only one sign '-' or '+', if at 
+ * some point the value is not numerical, it stops the process and returns the 
+ * finalized value
+ *
+ * @param str: array of char to use
+ *
+ * @return the int value
+ */
 int	ft_atoi(const char *str)
 {
 	char	*s;
 	int		nb;
 	int		signe;
 
+  if (!str)
+    return (0);
 	nb = 0;
 	signe = 1;
 	s = (char *) str;

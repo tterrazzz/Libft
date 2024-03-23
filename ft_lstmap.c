@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/* Iterates a function within the linked list 
+ *
+ * @param lst: linked list to iterates within
+ * @param f: pointer to function it uses to iterate
+ * @param del: pointer to function it uses to delete the linked list if the 
+ * iteration returns NULL
+ *
+ * @return a pointer to the first node; NULL if the iteration fails or if 
+ * either lst or f or del = NULL
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*begin;

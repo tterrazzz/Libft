@@ -12,22 +12,15 @@
 
 #include "libft.h"
 
+/* Converts an int value to an uppercase letter if lowercase
+ *
+ * @param c: int value
+ *
+ * @return the converted value or not
+ */
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;
 	return (c);
 }
-
-/*#include <ctype.h>
-int	main(void)
-{
-	int	c;
-	int	c2;
-
-	c = 100;
-	c2 = 100;
-	printf("%d", ft_toupper(c));
-	printf("%d", toupper(c2));
-	return (0);
-}*/

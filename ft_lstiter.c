@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/* Iterates a function within a linked list
+ *
+ * @param lst: linked list to use
+ * @param f: function to use to iterate
+ */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)

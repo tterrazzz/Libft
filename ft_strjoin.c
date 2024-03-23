@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+/* Joints two array of char and returns a dynamically memory allocated array of 
+ * char, it has to be freed by the user after use
+ *
+ * @param s1: array of char
+ * @param s2: second array of char
+ *
+ * @return a dynamically memory allocated array of char; same, size 1 if s1 or 
+ * s2 = NULL, still has to be freed by the user
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;

@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/* Prints an int value in a file descriptor
+ *
+ * @param n: int value
+ * @param fd: file descriptor
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

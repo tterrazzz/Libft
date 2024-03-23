@@ -12,7 +12,14 @@
 
 #include "libft.h"
 
+/* Sets all bytes to 0 within a chosen length
+ *
+ * @param s: pointer to use
+ * @param n: length
+ */
 void	ft_bzero(void *s, size_t n)
 {
+  if (!s)
+    return ;
 	s = ft_memset(s, 0, n);
 }

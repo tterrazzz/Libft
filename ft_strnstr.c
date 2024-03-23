@@ -26,12 +26,24 @@ static int	ft_translation(char *str, char *tosearch)
 	return (1);
 }
 
+/* Finds an array of char inside another array of char within a chosen length
+ *
+ * @param haystack: array of char to search in
+ * @param needle: array of char to search
+ * @param len: length
+ *
+ * @return the address of the first char if needle is found; the address of 
+ * haystack if needle is empty; NULL if not found or either haystack or 
+ * needle = NULL or len = 0
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	char	*str;
 	char	*tosearch;
 
+  if (!haystack || !needle)
+    return (NULL);
 	str = (char *) haystack;
 	tosearch = (char *) needle;
 	if (*needle == 0)

@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
+/* Prints an array of char in a file descriptor, adds a new line after
+ *
+ * @param s: array of char
+ * @param fd: file descriptor
+ */
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
 	if (!s)
-		i = 0;
-	else
-	{
-		ft_putstr_fd(s, fd);
-		ft_putchar_fd('\n', fd);
-	}
+    return ;
+  ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

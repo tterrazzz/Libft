@@ -12,10 +12,19 @@
 
 #include "libft.h"
 
+/* Creates a first node of linked list and uses a pointer to initialize its 
+ * content
+ *
+ * @param content: pointer to use for the node's content
+ *
+ * @return the first node of a linked list; NULL if content = NULL
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
+  if (!content)
+    return (NULL);
 	list = malloc(sizeof(t_list));
 	if (list == NULL)
 		return (NULL);

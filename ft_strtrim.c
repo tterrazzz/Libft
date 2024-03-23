@@ -24,6 +24,16 @@ int	ft_length(char const *s1, char const *set, int *start)
 	return (end - *start);
 }
 
+/* Returns a dynamically memory allocated array of char with removed chosen 
+ * array of char at its beginning and end, it has to be freed by the user 
+ * after use
+ *
+ * @param s1: array of char
+ * @param set: array of char to search for to remove
+ *
+ * @return a dynamically memory allocated trimed array of char; NULL if either 
+ * s1 or set = NULL
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
@@ -35,7 +45,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = ft_length(s1, set, &i);
 	str = ft_substr(s1, i, j);
-	if (str == NULL)
-		return (NULL);
 	return (str);
 }

@@ -12,7 +12,13 @@
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+/* Checks if the value is alphabetical or numerical
+ *
+ * @param c: value to check
+ *
+ * @return 1 if alphabetical or numerical, 0 if not
+ */
+bool	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);

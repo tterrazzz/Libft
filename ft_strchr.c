@@ -12,10 +12,19 @@
 
 #include "libft.h"
 
+/* Searchs an int value inside an array of char
+ *
+ * @param s: array of char
+ * @param c: value to find
+ *
+ * @return the address of the found int value; NULL if not found or if s = NULL
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
 
+  if (!s)
+    return (NULL);
 	str = (char *)s;
 	while (*str != (char) c)
 	{

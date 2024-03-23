@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/* Clears and frees the whole linked list
+ *
+ * @param lst: pointer to the linked list's first node address
+ * @param del: function to use to delete the content
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;

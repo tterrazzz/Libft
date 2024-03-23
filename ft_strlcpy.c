@@ -12,10 +12,20 @@
 
 #include "libft.h"
 
+/* Copies a chosen length of char from a source to a destination array of char
+ *
+ * @param dst: destination array of char
+ * @param src: source array of char
+ * @param dstsize: length
+ *
+ * @return the source array of char's length; -1 if either dst or src = NULL
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
+  if (!dst || !src)
+    return (-1);
 	i = 0;
 	if (dstsize == 0)
 		return (ft_strlen(src));

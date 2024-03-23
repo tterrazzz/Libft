@@ -12,7 +12,13 @@
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+/* Checks if the value is printable
+ *
+ * @param c: value to check
+ *
+ * @return 1 if printable, 0 if not
+ */
+bool	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

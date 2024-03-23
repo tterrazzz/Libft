@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/* Deletes a chosen linked list node and frees it
+ *
+ * @param lst: node
+ * @param del: function that deletes the content of the node
+ */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
